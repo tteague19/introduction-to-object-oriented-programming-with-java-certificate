@@ -1,3 +1,7 @@
+/*
+This program converts two Fahrenheit values to Celsius
+The values represent two weekend days
+*/
 public class FahrenheitToCelsius {
     public static void main(String[] args) {
         int saturdayFarenheit;
