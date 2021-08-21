@@ -8,8 +8,8 @@ public class FahrenheitToCelsius {
         int sundayFahrenheit;
         saturdayFahrenheit = 78;
         sundayFahrenheit = 81;
-        double saturdayCelsius = (5.0 / 9) * (saturdayFahrenheit - 32);
-        double sundayCelsius = (5.0 / 9) * (sundayFahrenheit - 32);
+        double saturdayCelsius = (5D / 9) * (saturdayFahrenheit - 32);
+        double sundayCelsius = (5D / 9) * (sundayFahrenheit - 32);
         System.out.println("Weekend Averages");
         System.out.println("Saturday: " + saturdayCelsius);
         System.out.println("Sunday: " + sundayCelsius);
