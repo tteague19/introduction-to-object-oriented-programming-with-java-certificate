@@ -13,6 +13,10 @@ public class FahrenheitToCelsius {
         System.out.print("Enter a day of the week and press \"Enter\": ");
         String day = input.next();
 
+        System.out.print("Enter your preferred Celsius label and press \"Enter\": ");
+        String cText = input.next();
+        cText = cText + ":";
+
         double celsius = (5D / 9) * (fahrenheit - 32);
         System.out.println(day + " Fahrenheit: " + fahrenheit);
         System.out.println(day + " Celcius: " + celsius);
