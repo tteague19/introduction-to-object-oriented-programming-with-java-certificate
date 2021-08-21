@@ -18,7 +18,9 @@ public class FahrenheitToCelsius {
         cText = cText + ":";
 
         double celsius = (5D / 9) * (fahrenheit - 32);
-        System.out.println(day + " Fahrenheit: " + fahrenheit);
-        System.out.println(day + " Celcius: " + celsius);
+
+        System.out.printf("%s Fahrenheit: %d\n", day, fahrenheit);
+        // We use "11" because it is the length of "Fahrenheit:".
+        System.out.printf("%s %-11s %.1f \n", day, cText, celsius);
     }
 }
