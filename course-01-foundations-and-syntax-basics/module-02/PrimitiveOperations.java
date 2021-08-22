@@ -32,5 +32,10 @@ public class PrimitiveOperations {
         // variable. Print out the value.
         int convertedDoubleToInt = (int) doubleVar;
         System.out.println(convertedDoubleToInt);
+
+        // Shifting focus, declare a char variable, and assign an
+        // uppercase letter to it. Print out this value.
+        char charVar = 'T';
+        System.out.println(charVar);
     }
 }
