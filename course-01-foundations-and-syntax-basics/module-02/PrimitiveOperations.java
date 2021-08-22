@@ -20,5 +20,11 @@ public class PrimitiveOperations {
         // 17.5. Print out this new value.
         double product = intVar * doubleVar;
         System.out.println(product);
+
+        // Use casting to convert the integer from the first step to a
+        // floating point value and store that in another new
+        // variable. Print out the value.
+        float convertedIntToFloat = (float) intVar;
+        System.out.println(convertedIntToFloat);
     }
 }
