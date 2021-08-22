@@ -26,5 +26,11 @@ public class PrimitiveOperations {
         // variable. Print out the value.
         float convertedIntToFloat = (float) intVar;
         System.out.println(convertedIntToFloat);
+
+        // Use casting to convert the floating point value from the
+        // first step to an integer type and store that in a new
+        // variable. Print out the value.
+        int convertedDoubleToInt = (int) doubleVar;
+        System.out.println(convertedDoubleToInt);
     }
 }
