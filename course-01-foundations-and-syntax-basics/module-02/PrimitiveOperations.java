@@ -13,5 +13,12 @@ public class PrimitiveOperations {
         doubleVar = 1729.56;
         System.out.println(intVar);
         System.out.println(doubleVar);
+
+        // Multiply these variables together, and assign the outcome
+        // to a new variable, ensuring that no data is lost. For
+        // example, if I multiply 5 and 3.5, the answer should be
+        // 17.5. Print out this new value.
+        double product = intVar * doubleVar;
+        System.out.println(product);
     }
 }
