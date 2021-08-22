@@ -37,5 +37,29 @@ public class PrimitiveOperations {
         // uppercase letter to it. Print out this value.
         char charVar = 'T';
         System.out.println(charVar);
+
+        // Using a numerical operation, change the letter to the same
+        // letter, but in lowercase. Use a numerical operation - do
+        // not reassign the variable. You may want to review a table
+        // of ASCII values as you’re working on this section. Print
+        // out the new char value. Hint: you’ll likely have to use
+        // casting to get this to work.
+
+        // Uppercase letters are listed in alphabetical order starting
+        // with the decimal code of 65. There are 26 letters in the
+        // English alphabet and six markings listed in ASCII after the
+        // uppercase letters. Lowercase letters begin at the decimal
+        // code 97. Thus, the code for a lowercase English letter
+        // character in ASCII is 32 values higher than the code for
+        // its uppercase counterpart.
+        int upperToLowerShift = 32;
+
+        // We cast the char variable to an integer to convert it to
+        // its character code. For 'T', this is 84. We then add the
+        // shift to obtain an integer value of 116. 116 is the
+        // character code for 't', and, finally, we cast 116 as a char
+        // to obtain a lowercase 't' for charVar.
+        charVar = (char) ((int) charVar + upperToLowerShift);
+        System.out.println(charVar);
     }
 }
