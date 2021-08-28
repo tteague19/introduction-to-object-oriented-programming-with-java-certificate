@@ -1,11 +1,10 @@
 public class Averager {
     public static void main(String[] args) {
-        double[] weekHighs = {80, 70, 75, 69, 72, 74, 90};
-        double highsSum = 0;
-        for (double dayHigh : weekHighs) {
-            highsSum = highsSum + dayHigh;
+        double sum = 0;
+        for (String num : args) {
+            sum = sum + Double.parseDouble(num);
         }
-        double averageHighs = highsSum / weekHighs.length;
-        System.out.println("Average is: " + averageHighs);
+        double average = (args.length > 0) ? (sum / args.length) : 0;
+        System.out.println("Average is: " + average);
     }
 }
