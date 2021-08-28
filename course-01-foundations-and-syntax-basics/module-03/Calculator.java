@@ -113,10 +113,61 @@ public class Calculator {
 
                 break;
             case "alphabetize":
+                System.out.println("Enter two words:");
+                firstInput = input.next();
+                secondInput = input.next();
+
+                int compareVal = firstInput.toLowerCase().compareTo(secondInput.toLowerCase());
+
+                if (compareVal < 0) {
+                    System.out.println("Answer: "
+                                        + firstInput
+                                        + " comes before "
+                                        + secondInput
+                                        + " alphabetically.");
+                } else if (compareVal > 0) {
+                    System.out.println("Answer: "
+                                        + secondInput
+                                        + " comes before "
+                                        + firstInput
+                                        + " alphabetically.");
+                } else {
+                    System.out.println("Answer: Chicken or Egg.");
+                }
+
                 break;
             default:
                 System.out.println(errorMessage);
                 break;
         }
+
+        // Sub-Task 4
+        // The program should terminate gracefully after the result
+        // of the operation is printed.
+
+        // Additional Requirements
+        // Note that 0 must not be the divisor if you are dividing.
+        // If a 0 is the divisor, print the same error message shown
+        // above and terminate your program. For the multiply and
+        // divide operations, format your output using printf.
+        //
+        // Your program must also have at least one switch statement
+        // and one if/else statement.
+        //
+        // For the alphabetize operation, you will be using a
+        // pre-defined String method that compares two strings
+        // lexicographically, and returns an integer depending on
+        // which String is larger. If a 0 is returned, both Strings
+        // are lexicographically equal. A positive integer is
+        // returned if the first string is lexicographically greater
+        // than the second string, or else the result would be
+        // negative. See the example output for how the result should
+        // be printed to the user for the cases where Strings are equal.
+        //
+        // When prompting for integers, doubles, or Strings, spaces
+        // will serve as dividers between the two inputs. Remember
+        // that when performing multiply/divide operations on doubles,
+        // the answer should only include two numbers after the
+        // decimal point.
     }
 }
