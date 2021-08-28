@@ -6,9 +6,28 @@ public class FahrenheitToCelsius {
         final int MIN_POOL_TEMP = 85;
         final int MAX_POOL_TEMP = 90;
 
+        // This value was recorded on July 10th, 1913 at Furnace
+        // Creek Ranch located in Death Valley in the United States.
+        final int MAX_TEMP = 135;
+        // This value was recorded on July 21st, 1983 at the Soviet
+        // Vostok Station in Antarctica.
+        final int MIN_TEMP = -129;
+
         Scanner input = new Scanner(System.in);
         System.out.print("Enter a Fahrenheit value: ");
         int fahrenheit = input.nextInt();
+
+        while (fahrenheit > MAX_TEMP || fahrenheit < MIN_TEMP) {
+            System.out.println("Error: the Fahrenheit value must be lower than "
+                                + MAX_TEMP
+                                + " and higher than "
+                                + MIN_TEMP
+                                + ".");
+            System.out.print("Please enter another Fahrenheit value: ");
+            fahrenheit = input.nextInt();
+        }
+
+
         System.out.print("Enter a day of the week: ");
         String day = input.next();
         double celsius = (5D / 9) * (fahrenheit - 32);
