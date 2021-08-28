@@ -19,5 +19,13 @@ public class StringOperations {
         String myNameModified = myName.replace('T', 'A');
         myNameModified = myNameModified.replace('s', 'Z');
         System.out.println(myNameModified);
+
+        // Sub-Task 3
+        // Lastly, let’s work with some URLs.  Declare a new String
+        // and give it the value of some web address, in the form
+        // www.name.tld, such as www.gatech.edu or
+        // www.stackoverflow.com. Print out this address.
+        String urlString = "www.80000hours.org";
+        System.out.println(urlString);
     }
 }
