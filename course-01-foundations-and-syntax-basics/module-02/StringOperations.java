@@ -15,7 +15,7 @@ public class StringOperations {
         // letters changed
 
         // Fortunately, my name does not contain any repeated letters.
-        // If it did,
+        // If it did, I would need to use the substring method.
         String myNameModified = myName.replace('T', 'A');
         myNameModified = myNameModified.replace('s', 'Z');
         System.out.println(myNameModified);
