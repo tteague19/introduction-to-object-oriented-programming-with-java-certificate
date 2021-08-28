@@ -74,8 +74,43 @@ public class Calculator {
 
                 break;
             case "multiply":
+                System.out.println("Enter two doubles:");
+                firstInput = input.next();
+                secondInput = input.next();
+
+                try
+                {
+                    firstInputAsDouble = Double.parseDouble(firstInput);
+                    secondInputAsDouble = Double.parseDouble(secondInput);
+
+                    double product = firstInputAsDouble * secondInputAsDouble;
+                    System.out.printf("Answer: %.2f\n", product);
+                } catch(Exception e) {
+                    System.out.println(errorMessage);
+                }
+
                 break;
             case "divide":
+                System.out.println("Enter two doubles:");
+                firstInput = input.next();
+                secondInput = input.next();
+
+                try
+                {
+                    firstInputAsDouble = Double.parseDouble(firstInput);
+                    secondInputAsDouble = Double.parseDouble(secondInput);
+
+                    if (secondInputAsDouble == 0.0) {
+                        System.out.println(errorMessage);
+                    } else {
+                        double quotient = firstInputAsDouble / secondInputAsDouble;
+                        System.out.printf("Answer: %.2f\n", quotient);
+                    }
+
+                } catch(Exception e) {
+                    System.out.println(errorMessage);
+                }
+
                 break;
             case "alphabetize":
                 break;
