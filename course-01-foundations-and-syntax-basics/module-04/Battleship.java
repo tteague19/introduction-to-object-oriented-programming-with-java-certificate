@@ -1,6 +1,8 @@
 public class Battleship {
     public static void main(String[] args) {
-
+		// Sub-Task 1
+		// Print out the message Welcome to Battleship!
+		System.out.println("Welcome to Battleship!");
     }
 
     // Use this method to print game boards to the console.
