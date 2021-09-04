@@ -28,13 +28,37 @@ public class Battleship {
 		// 100 new lines must follow the printed board so that the
 		// other player will not see the entered coordinates and board
 		// of their opponent.
-		int[][] player1ShipLocations = getShipCoords(1, 5, 5);
-		printLocationBoard(player1ShipLocations);
+		int boardSize = 5;
+		int numShips = 5;
+		int[][] player1ShipLocations = getShipCoords(1, numShips, boardSize);
+		char[][] player1LocationBoard = createLocationBoard(player1ShipLocations, boardSize);
+		printBattleShip(player1LocationBoard);
 		printBoardSeparation(100);
 
-		int[][] player2ShipLocations = getShipCoords(2, 5, 5);
-		printLocationBoard(player1ShipLocations);
+		int[][] player2ShipLocations = getShipCoords(2, numShips, boardSize);
+		char[][] player2LocationBoard = createLocationBoard(player2ShipLocations, boardSize);
+		printBattleShip(player2LocationBoard);
 		printBoardSeparation(100);
+
+		// Create two 5x5 grids in the form of 2D arrays using the
+		// coordinates entered by the players. These Location Boards
+		// store each player's ship locations and will be used to keep
+		// track of the damage states of each player’s ships, as well
+		// as any misses. The corresponding Location Board must be
+		// printed to the console right after a player enters the
+		// coordinates of their ships.
+		// A ‘–’ character must represent an empty space.
+		// An ‘@’ character must represent a ship that is not hit.
+		// When the game begins, all ships will start fresh with no hits.
+		//
+		// An ‘X’ character will represent a space with a ship that
+		// has been hit.
+		//
+		// An ‘O’ character will represent a space that was fired upon,
+		// but since there is not ship at that location, the shot
+		// was a miss.
+		// Each player’s board must have five ships of length one.
+		// Five of the 25 grid spaces will start with ships on them.
     }
 
 	private static int[][] getShipCoords(int playerNum, int numShips, int boardSize) {
@@ -117,8 +141,46 @@ public class Battleship {
 		}
 	}
 
-	private static void printLocationBoard(int[][] shipLocations) {
-		System.out.println("Player board goes here");
+	private static char[][] createLocationBoard(int[][] shipLocations, int boardSize) {
+
+		int numRows = boardSize;
+		int numCols = numRows;
+		char[][] locationBoard = new char[numRows][numCols];
+
+		locationBoard = createBlankBoard(locationBoard, '-');
+		locationBoard = addShipsToLocationBoard(locationBoard, shipLocations, '@');
+
+		return locationBoard;
+	}
+
+	private static char[][] createBlankBoard(
+		char[][] locationBoard,
+		char emptyChar
+		) {
+
+		for (int row = 0; row < locationBoard.length; row++) {
+			for (int col = 0; col < locationBoard[row].length; col++) {
+				locationBoard[row][col] = emptyChar;
+			}
+		}
+
+		return locationBoard;
+	}
+
+	private static char[][] addShipsToLocationBoard(
+		char[][] locationBoard,
+		int[][] shipLocations,
+		char shipChar
+		) {
+
+		for (int shipIndex = 0; shipIndex < shipLocations.length; shipIndex++) {
+			int shipCoordX = shipLocations[shipIndex][0];
+			int shipCoordY = shipLocations[shipIndex][1];
+
+			locationBoard[shipCoordX][shipCoordY] = shipChar;
+		}
+
+		return locationBoard;
 	}
 
     // Use this method to print game boards to the console.
