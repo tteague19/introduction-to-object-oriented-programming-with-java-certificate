@@ -4,7 +4,7 @@ public class Battleship {
     public static void main(String[] args) {
 		// Sub-Task 1
 		// Print out the message Welcome to Battleship!
-		System.out.println("Welcome to Battleship!");
+		System.out.println("Welcome to Battleship!\n");
 
 		// Prompt each user to enter coordinates for five ships of
 		// length one. There must be five separate prompts for each
