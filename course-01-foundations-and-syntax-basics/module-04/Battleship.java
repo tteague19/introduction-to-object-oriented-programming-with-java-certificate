@@ -28,12 +28,6 @@ public class Battleship {
 		// 100 new lines must follow the printed board so that the
 		// other player will not see the entered coordinates and board
 		// of their opponent.
-		int boardSize = 5;
-		int numShips = 5;
-		int[][] player1ShipLocations = getShipCoords(1, numShips, boardSize);
-		char[][] player1LocationBoard = createLocationBoard(player1ShipLocations, boardSize);
-		printBattleShip(player1LocationBoard);
-		printBoardSeparation(100);
 
 		// Sub-Task 3
 		// Create two 5x5 grids in the form of 2D arrays using the
@@ -68,6 +62,17 @@ public class Battleship {
 		printBoardSeparation(100);
 
 		// Sub-Task 4
+		// Additionally, you must generate two more 5x5 grids in the
+		// form of 2D arrays. These Target History Boards will allow
+		// each player to visually track their hits and misses. After
+		// each hit or miss by the player, their Target History Board
+		// must be printed to the console using the provided method.
+		// On this board, an ‘X’ character must represent a hit by the
+		// player, an ‘O’ character must represent a miss by the
+		// player, and a ‘-’ character must represent a space that
+		// has not been attacked.
+		char[][] player1TargetHistoryBoard = createTargetHistoryBoard(boardSize);
+		char[][] player2TargetHistoryBoard = createTargetHistoryBoard(boardSize);
     }
 
 	private static int[][] getShipCoords(int playerNum, int numShips, int boardSize) {
@@ -162,18 +167,27 @@ public class Battleship {
 		return locationBoard;
 	}
 
+	private static char[][] createTargetHistoryBoard(int boardSize) {
+
+		int numRows = boardSize;
+		int numCols = numRows;
+		char[][] targetHistoryBoard = new char[numRows][numCols];
+
+		return createBlankBoard(targetHistoryBoard, '-');
+	}
+
 	private static char[][] createBlankBoard(
-		char[][] locationBoard,
+		char[][] board,
 		char emptyChar
 		) {
 
-		for (int row = 0; row < locationBoard.length; row++) {
-			for (int col = 0; col < locationBoard[row].length; col++) {
-				locationBoard[row][col] = emptyChar;
+		for (int row = 0; row < board.length; row++) {
+			for (int col = 0; col < board[row].length; col++) {
+				board[row][col] = emptyChar;
 			}
 		}
 
-		return locationBoard;
+		return board;
 	}
 
 	private static char[][] addShipsToLocationBoard(
