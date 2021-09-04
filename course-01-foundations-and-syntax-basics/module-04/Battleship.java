@@ -35,11 +35,7 @@ public class Battleship {
 		printBattleShip(player1LocationBoard);
 		printBoardSeparation(100);
 
-		int[][] player2ShipLocations = getShipCoords(2, numShips, boardSize);
-		char[][] player2LocationBoard = createLocationBoard(player2ShipLocations, boardSize);
-		printBattleShip(player2LocationBoard);
-		printBoardSeparation(100);
-
+		// Sub-Task 3
 		// Create two 5x5 grids in the form of 2D arrays using the
 		// coordinates entered by the players. These Location Boards
 		// store each player's ship locations and will be used to keep
@@ -59,6 +55,19 @@ public class Battleship {
 		// was a miss.
 		// Each player’s board must have five ships of length one.
 		// Five of the 25 grid spaces will start with ships on them.
+		int boardSize = 5;
+		int numShips = 5;
+		int[][] player1ShipLocations = getShipCoords(1, numShips, boardSize);
+		char[][] player1LocationBoard = createLocationBoard(player1ShipLocations, boardSize);
+		printBattleShip(player1LocationBoard);
+		printBoardSeparation(100);
+
+		int[][] player2ShipLocations = getShipCoords(2, numShips, boardSize);
+		char[][] player2LocationBoard = createLocationBoard(player2ShipLocations, boardSize);
+		printBattleShip(player2LocationBoard);
+		printBoardSeparation(100);
+
+		// Sub-Task 4
     }
 
 	private static int[][] getShipCoords(int playerNum, int numShips, int boardSize) {
