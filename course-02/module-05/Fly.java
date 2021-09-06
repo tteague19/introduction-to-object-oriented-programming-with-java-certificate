@@ -57,8 +57,16 @@ public class Fly {
         return this.mass;
     }
 
+    public void setMass(double mass) {
+        this.mass = mass;
+    }
+
     public double getSpeed() {
         return this.speed;
+    }
+
+    public void setSpeed(double speed) {
+        this.speed = speed;
     }
 
     public String toString() {
