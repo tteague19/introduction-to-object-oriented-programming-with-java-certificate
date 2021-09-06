@@ -5,6 +5,12 @@ public class Insect {
     private int x;
     private int y;
 
+    public Insect(double initWeight, int initX, int initY) {
+        weight = initWeight;
+        x = initX;
+        y = initY;
+    }
+
     // Test method
     public static void main(String[] args) {
         Insect buzz1 = new Insect();
