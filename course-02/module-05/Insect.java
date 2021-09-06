@@ -31,8 +31,28 @@ public class Insect {
         return x;
     }
 
+    public void setX(int newX) {
+        if (isLegalX(newX)) {
+            x = newX;
+        }
+    }
+
     public int getY() {
         return y;
+    }
+
+    public void setY(int newY) {
+        if (isLegalY(newY)) {
+            y = newY;
+        }
+    }
+
+    public static boolean isLegalX(int newX) {
+        return (newX >= 0 ? true : false);
+    }
+
+    public static boolean isLegalY(int newY) {
+        return (newY >= 0 ? true : false);
     }
 
     public static int getPopulation() {
