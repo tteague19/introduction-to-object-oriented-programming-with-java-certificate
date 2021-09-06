@@ -23,6 +23,22 @@ public class Insect {
     }
 
     // Methods
+    public double getWeight() {
+        return weight;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public static int getPopulation() {
+        return population;
+    }
+
     public void eat(double amount) {
         System.out.println("Nibble Nibble");
         weight = weight + amount;
