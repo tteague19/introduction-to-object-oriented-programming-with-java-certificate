@@ -1,4 +1,4 @@
-public class Canine {
+public abstract class Canine {
 
     protected double size;
 
@@ -9,4 +9,6 @@ public class Canine {
     public void bark() {
         System.out.println("Woof Woof");
     }
+
+    public abstract void groom();
 }
