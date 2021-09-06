@@ -17,48 +17,48 @@ public class Insect {
         "Spiders are not considered insects"
     };
 
-    public Insect(double initWeight) {
-        this(initWeight, DEFAULT_X, DEFAULT_Y);
+    public Insect(double weight) {
+        this(weight, DEFAULT_X, DEFAULT_Y);
     }
 
-    public Insect(double initWeight, int initX, int initY) {
-        weight = initWeight;
-        x = initX;
-        y = initY;
+    public Insect(double weight, int x, int y) {
+        this.weight = weight;
+        this.x = x;
+        this.y = y;
         population++;
     }
 
     // Methods
     public double getWeight() {
-        return weight;
+        return this.weight;
     }
 
     public int getX() {
-        return x;
+        return this.x;
     }
 
-    public void setX(int newX) {
-        if (isLegalX(newX)) {
-            x = newX;
+    public void setX(int x) {
+        if (isLegalX(x)) {
+            this.x = x;
         }
     }
 
     public int getY() {
-        return y;
+        return this.y;
     }
 
-    public void setY(int newY) {
-        if (isLegalY(newY)) {
-            y = newY;
+    public void setY(int y) {
+        if (isLegalY(y)) {
+            this.y = y;
         }
     }
 
-    public static boolean isLegalX(int newX) {
-        return (newX >= 0 ? true : false);
+    public static boolean isLegalX(int x) {
+        return (x >= 0 ? true : false);
     }
 
-    public static boolean isLegalY(int newY) {
-        return (newY >= 0 ? true : false);
+    public static boolean isLegalY(int y) {
+        return (y >= 0 ? true : false);
     }
 
     public static int getPopulation() {
@@ -67,15 +67,15 @@ public class Insect {
 
     public void eat(double amount) {
         System.out.println("Nibble Nibble");
-        weight = weight + amount;
+        this.weight = this.weight + amount;
     }
 
-    public void move(int newX, int newY) {
-        double distance = calculateDistance(x, y, newX, newY);
+    public void move(int x, int y) {
+        double distance = calculateDistance(this.x, this.y, x, y);
         if (distance > 0) {
-            x = newX;
-            y = newY;
-            weight = weight - DIST_WEIGHT_LOSS_FACTOR * distance;
+            this.x = x;
+            this.y = y;
+            this.weight = this.weight - DIST_WEIGHT_LOSS_FACTOR * distance;
             System.out.printf("Moved %.2f units\n", distance);
         }
         else {
