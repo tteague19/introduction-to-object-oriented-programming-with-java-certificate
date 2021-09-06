@@ -15,5 +15,11 @@ public class InsectClient {
         // This call will change the value.
         bug1.setX(133);
         System.out.println(bug1.getX());
+
+        Insect bug2 = new Insect(31);
+        System.out.println(bug2.getWeight());
+        System.out.println(bug2.getX());
+        System.out.println(bug2.getY());
+        System.out.println(Insect.getPopulation());
     }
 }

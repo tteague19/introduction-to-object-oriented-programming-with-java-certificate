@@ -6,6 +6,8 @@ public class Insect {
     private int y;
 
     // Static constants and variables
+    public static final int DEFAULT_X = 0;
+    public static final int DEFAULT_Y = 0;
     public static final double DIST_WEIGHT_LOSS_FACTOR = 0.0001;
     private static int population = 0;
     private static final String[] FACTS = {
@@ -14,6 +16,10 @@ public class Insect {
         "Insects are cold-blooded",
         "Spiders are not considered insects"
     };
+
+    public Insect(double initWeight) {
+        this(initWeight, DEFAULT_X, DEFAULT_Y);
+    }
 
     public Insect(double initWeight, int initX, int initY) {
         weight = initWeight;
