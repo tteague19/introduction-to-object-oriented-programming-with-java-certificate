@@ -8,6 +8,12 @@ public class Insect {
     // Static constants and variables
     public static final double DIST_WEIGHT_LOSS_FACTOR = 0.0001;
     private static int population = 0;
+    private static final String[] FACTS = {
+        "The two main groups of insects are winged and wingless",
+        "There are more than 1 million insect species",
+        "Insects are cold-blooded",
+        "Spiders are not considered insects"
+    };
 
     public Insect(double initWeight, int initX, int initY) {
         weight = initWeight;
@@ -40,6 +46,11 @@ public class Insect {
 
     }
 
+    public static String produceRandomFact() {
+        int index = (int) (Math.random() * (FACTS.length - 1) + 1);
+        return FACTS[index];
+    }
+
     // Test method
     public static void main(String[] args) {
         // Insect buzz1 = new Insect();
@@ -52,5 +63,7 @@ public class Insect {
 
         bug1.move(1, 10);
         bug2.move(-300, 400);
+
+        System.out.println(produceRandomFact());
     }
 }
