@@ -95,6 +95,82 @@
 //
 // Getters and Setters as necessary.
 
-public class RedAstronaut {
+import java.util.Arrays;
 
+public class RedAstronaut extends Player implements Imposter {
+
+    private String skill;
+
+    public RedAstronaut(String name, int susLevel, String skill) {
+        super(name, susLevel);
+        this.skill = skill.toLowerCase();
+    }
+
+    public RedAstronaut(String name) {
+        this(name, 15, "experienced");
+    }
+
+    public void emergencyMeeting() {
+
+        if (!this.isFrozen()) {
+            Arrays.sort(RedAstronaut.getPlayers());
+            int lastIndex = RedAstronaut.getPlayers().length - 1;
+            Player highestSusPlayer = RedAstronaut.getPlayers()[lastIndex];
+            Player secondHighestSusPlayer = RedAstronaut.getPlayers()[lastIndex-1];
+
+            if (highestSusPlayer.compareTo(secondHighestSusPlayer) != 0) {
+                highestSusPlayer.setFrozen(true);
+            }
+        }
+
+        if (super.gameOver()) {
+
+        }
+    }
+
+    public void freeze(Player p) {
+        if (!(p instanceof Impostor) && !p.isFrozen()) {
+            if (this.getSusLevel() < p.getSusLevel()) {
+                p.setFrozen(true);
+            }
+            else {
+                this.setSusLevel(2 * this.getSusLevel());
+            }
+
+            if (super.gameOver()) {
+
+            }
+        }
+    }
+
+    public void sabotage(Player p) {
+        if (!(p instanceof Imposter) && !this.isFrozen() && !p.isFrozen()) {
+            if (this.getSusLevel() < 20) {
+                p.setSusLevel((int)(1.5 * p.getSusLevel()));
+            }
+            else {
+                p.setSusLevel((int)(1.25 * p.getSusLevel()));
+            }
+        }
+    }
+
+    public boolean equals(Object o) {
+        RedAstronaut other = (RedAstronaut) o;
+        boolean condition = (this.getSkill() == other.getSkill());
+
+        return super.equals(o) && condition;
+    }
+
+    public String toString() {
+        String playerStr = super.toString();
+        return (this.getSusLevel() > 15 ? playerStr : playerStr.toUpperCase());
+    }
+
+    public void setSkill(String skill) {
+        this.skill = skill.toLowerCase();
+    }
+
+    public String getSkill() {
+        return this.skill;
+    }
 }
