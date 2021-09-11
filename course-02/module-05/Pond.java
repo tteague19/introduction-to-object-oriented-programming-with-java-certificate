@@ -22,7 +22,7 @@ public class Pond {
 
         // Perform the following operations in this order:
         // Set the species of any Frog to “1331 Frogs”
-        Frog.species = "1331 Frogs";
+        Frog.setSpecies("1331 Frogs");
 
         // Print out on a new line the description of the Frog named
         // Peepo given by the toString method.
