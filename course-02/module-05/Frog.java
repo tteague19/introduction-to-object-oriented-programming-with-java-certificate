@@ -26,7 +26,7 @@ public class Frog {
     private int age;
     private double tongueSpeed;
     private boolean isFroglet;
-    public static String species = "Rare Pepe";
+    private static String species = "Rare Pepe";
     public static final int DEFAULT_AGE = 5;
     public static final double DEFAULT_TONGUE_SPEED = 5D;
 
