@@ -1,4 +1,4 @@
-public class Wolf extends Canine {
+public class Wolf extends Canine implements Comparable {
 
     protected int rank;
 
@@ -22,8 +22,13 @@ public class Wolf extends Canine {
         System.out.println("lick");
     };
 
+    public int compareTo(Wolf anotherWolf) {
+        return - (this.rank - anotherWolf.rank);
+    }
+
     public static void main(String[] args) {
         Wolf alpha = new Wolf(1, 17.1);
-        alpha.bark();
+        Wolf puppy = new Wolf(10, 3.0);
+        System.out.println(alpha.compareTo(puppy));
     }
 }
