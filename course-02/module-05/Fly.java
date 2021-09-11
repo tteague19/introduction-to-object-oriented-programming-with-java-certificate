@@ -83,13 +83,16 @@ public class Fly {
     }
 
     public void grow(int addedMass) {
-        this.mass = this.mass + addedMass;
 
-        if (this.mass < 20.0) {
-            this.speed = this.speed + addedMass;
+        for (int index = 1; index <= addedMass; index++) {
+            this.mass = this.mass + 1;
+
+            if (this.mass <= 20.0) {
+                this.speed = this.speed + 1;
         }
         else {
-            this.speed = this.speed - 0.5 * (this.mass - 20);
+                this.speed = this.speed - 0.5;
+            }
         }
     }
 
