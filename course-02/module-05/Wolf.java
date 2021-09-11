@@ -18,7 +18,9 @@ public class Wolf extends Canine {
         }
     }
 
-    public void groom() {};
+    public void groom() {
+        System.out.println("lick");
+    };
 
     public static void main(String[] args) {
         Wolf alpha = new Wolf(1, 17.1);
