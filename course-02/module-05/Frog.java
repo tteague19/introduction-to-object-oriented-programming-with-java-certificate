@@ -109,7 +109,21 @@ public class Frog {
     // all instances of the class. Points will be deducted if you
     // include an unnecessary or inappropriate setter/getter.
     public void grow(int numMonths) {
-        this.age = this.age + numMonths;
+
+        for (int index = 1; index <= numMonths; index++) {
+            this.age = this.age + 1;
+
+            if (this.age <= 12) {
+                this.tongueSpeed = this.tongueSpeed + 1;
+            }
+            else if (this.age > 30) {
+                this.tongueSpeed = this.tongueSpeed - 1;
+            }
+        }
+
+        if (this.tongueSpeed < 5D) {
+            this.tongueSpeed = 5D;
+        }
 
         // Update isFroglet
         if ((this.age > 1) && (this.age < 7)) {
@@ -118,23 +132,17 @@ public class Frog {
         else {
             this.isFroglet = false;
         }
-
-        // Make the decrease and increase factors static variables
-        // Here and in Fly
-        if (this.age < 12) {
-            this.tongueSpeed = this.tongueSpeed + numMonths;
-        }
-        else if (this.age >= 30) {
-            this.tongueSpeed = this.tongueSpeed - (this.age - 30);
-        }
-
-        if (this.tongueSpeed < 5) {
-            this.tongueSpeed = 5;
-        }
     }
 
     public void grow() {
         this.age = this.age + 1;
+
+        if (this.age <= 12) {
+            this.tongueSpeed = this.tongueSpeed + 1;
+        }
+        else if (this.age >= 30) {
+            this.tongueSpeed = this.tongueSpeed - 1;
+        }
 
         // Update isFroglet
         if ((this.age > 1) && (this.age < 7)) {
@@ -152,7 +160,6 @@ public class Frog {
 
         boolean isCaught = (this.tongueSpeed > fly.getSpeed());
         if (isCaught && (fly.getMass() >= 0.5 * this.age)) {
-            // Again, make this a static member of the class
             this.grow(1);
         }
 
