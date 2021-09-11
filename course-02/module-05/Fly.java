@@ -89,8 +89,8 @@ public class Fly {
 
             if (this.mass <= 20.0) {
                 this.speed = this.speed + 1;
-        }
-        else {
+            }
+            else {
                 this.speed = this.speed - 0.5;
             }
         }
@@ -98,22 +98,5 @@ public class Fly {
 
     public boolean isDead() {
         return this.mass == 0.0;
-    }
-
-    public static void main(String[] args) {
-        Fly fly1 = new Fly(5.0, 15.0);
-        Fly fly2 = new Fly(0.0, 10.0);
-
-        System.out.println(fly1);
-        System.out.println(fly2);
-
-        fly1.grow(14);
-        System.out.println(fly1);
-
-        fly1.grow(1);
-        System.out.println(fly1);
-
-        fly1.grow(5);
-        System.out.println(fly1);
     }
 }
