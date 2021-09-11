@@ -92,7 +92,7 @@ public abstract class Player implements Comparable<Player> {
      * This method will be overridden by any child class and will be
      * used to have an emergency meeting.
      */
-    //YOUR CODE HERE
+    abstract void emergencyMeeting();
 
     /**
      * This method is the compareTo method from the Comparable
@@ -102,9 +102,9 @@ public abstract class Player implements Comparable<Player> {
      * @return int this value will tell you the ordering of 2 Player
      *             objects
      */
+    @Override
     public int compareTo(Player p) {
-        // YOUR CODE HERE
-        return 0; // delete this once you have implemented this method
+        return this.susLevel - p.susLevel;
     }
 
     /**
