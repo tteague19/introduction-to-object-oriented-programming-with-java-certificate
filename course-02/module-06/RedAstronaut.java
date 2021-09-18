@@ -167,8 +167,15 @@ public class RedAstronaut extends Player implements Imposter {
     }
 
     public String toString() {
-        String playerStr = super.toString();
-        return (this.getSusLevel() > 15 ? playerStr : playerStr.toUpperCase());
+        String playerStr = super.toString()
+                            + " I am an "
+                            + this.skill
+                            + " player!";
+
+        if (this.getSusLevel() > 15) {
+            playerStr = playerStr.toUpperCase();
+        }
+        return playerStr;
     }
 
     public void setSkill(String skill) {
