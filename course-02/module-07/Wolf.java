@@ -4,7 +4,7 @@ public class Wolf extends Canine implements Comparable<Wolf> {
 
     protected int rank;
 
-    public Wolf(int rank, double size) {
+    public Wolf(double size, int rank) {
         super(size);
         this.rank = rank;
     }
@@ -26,10 +26,6 @@ public class Wolf extends Canine implements Comparable<Wolf> {
 
     public int compareTo(Wolf anotherWolf) {
         return - (this.rank - anotherWolf.rank);
-    }
-
-    public void pay() {
-        System.out.println("Grrrr! Warning, don’t try and chase me for payment. I'm a wolf. Run Run Run!");
     }
 
     public String toString() {
