@@ -4,7 +4,7 @@ public class Wolf extends Canine implements Comparable<Wolf> {
 
     protected int rank;
 
-    public Wolf(int rank, double size) {
+    public Wolf(double size, int rank) {
         super(size);
         this.rank = rank;
     }
