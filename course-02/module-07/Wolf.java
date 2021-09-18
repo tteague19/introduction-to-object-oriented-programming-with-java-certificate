@@ -22,7 +22,12 @@ public class Wolf extends Canine implements Comparable<Wolf> {
 
     public void groom() {
         System.out.println("lick");
-    };
+    }
+
+    public void pay() {
+        System.out.println("Grrrr! Warning, don’t try and chase me"
+                            + " for payment. I'm a wolf. Run Run Run!");
+    }
 
     public int compareTo(Wolf anotherWolf) {
         return - (this.rank - anotherWolf.rank);
