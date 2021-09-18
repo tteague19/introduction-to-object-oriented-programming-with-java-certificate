@@ -155,10 +155,15 @@ public class RedAstronaut extends Player implements Imposter {
     }
 
     public boolean equals(Object o) {
+
+        if (o instanceof RedAstronaut) {
         RedAstronaut other = (RedAstronaut) o;
         boolean condition = (this.getSkill() == other.getSkill());
 
         return super.equals(o) && condition;
+        }
+
+        return false;
     }
 
     public String toString() {
