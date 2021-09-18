@@ -39,16 +39,16 @@ public class Wolf extends Canine implements Comparable<Wolf> {
 
     public static void main(String[] args) {
         Wolf[] pack = {
-            new Wolf(2, 17.1),
-            new Wolf(10, 3),
-            new Wolf(7, 9.2),
-            new Wolf(8, 9.1),
-            new Wolf(3, 17.81),
-            new Wolf(1, 16.2),
-            new Wolf(4, 16),
-            new Wolf(5, 16),
-            new Wolf(6, 10),
-            new Wolf(9, 5),
+            new Wolf(17.1, 2),
+            new Wolf(3D, 10),
+            new Wolf(9.2, 7),
+            new Wolf(9.1, 8),
+            new Wolf(17.81, 3),
+            new Wolf(16.2, 1),
+            new Wolf(16D, 4),
+            new Wolf(16D, 5),
+            new Wolf(10D, 6),
+            new Wolf(5D, 9),
         };
         System.out.println("Unsorted Pack: " + Arrays.toString(pack));
         Arrays.sort(pack);
