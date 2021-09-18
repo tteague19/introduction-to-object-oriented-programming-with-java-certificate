@@ -15,7 +15,7 @@
 // (Note: any class that implements Impostor must provide a method
 // definition for this method)
 
-public interface Imposter {
+public interface Impostor {
     public void freeze(Player p);
     public void sabotage(Player p);
 }
