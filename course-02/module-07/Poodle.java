@@ -1,4 +1,4 @@
-public public class Poodle extends Dog {
+public class Poodle extends Dog {
     private String favoriteShampoo;
     private String favoriteConditioner;
 
