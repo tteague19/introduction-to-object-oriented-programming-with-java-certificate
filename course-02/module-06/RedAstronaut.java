@@ -144,7 +144,7 @@ public class RedAstronaut extends Player implements Imposter {
     }
 
     public void sabotage(Player p) {
-        if (!(p instanceof Imposter) && !this.isFrozen() && !p.isFrozen()) {
+        if (!(p instanceof Impostor) && !this.isFrozen() && !p.isFrozen()) {
             if (this.getSusLevel() < 20) {
                 p.setSusLevel((int)(1.5 * p.getSusLevel()));
             }
