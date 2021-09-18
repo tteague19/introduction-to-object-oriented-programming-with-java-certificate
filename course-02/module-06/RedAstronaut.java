@@ -131,7 +131,7 @@ public class RedAstronaut extends Player implements Impostor {
             if (highestSusIndex != 0) {
                 Player secondHighestSusPlayer = super.getPlayers()[highestSusIndex-1];
 
-            if (highestSusPlayer.compareTo(secondHighestSusPlayer) != 0) {
+                if (highestSusPlayer.compareTo(secondHighestSusPlayer) != 0) {
                     highestSusPlayer.setFrozen(true);
                 }
             }
@@ -172,10 +172,10 @@ public class RedAstronaut extends Player implements Impostor {
     public boolean equals(Object o) {
 
         if (o instanceof RedAstronaut) {
-        RedAstronaut other = (RedAstronaut) o;
-        boolean condition = (this.getSkill() == other.getSkill());
+            RedAstronaut other = (RedAstronaut) o;
+            boolean condition = (this.getSkill() == other.getSkill());
 
-        return super.equals(o) && condition;
+            return super.equals(o) && condition;
         }
 
         return false;
