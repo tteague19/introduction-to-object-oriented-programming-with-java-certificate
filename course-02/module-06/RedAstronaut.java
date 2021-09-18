@@ -113,19 +113,34 @@ public class RedAstronaut extends Player implements Imposter {
     public void emergencyMeeting() {
 
         if (!this.isFrozen()) {
-            Arrays.sort(RedAstronaut.getPlayers());
-            int lastIndex = RedAstronaut.getPlayers().length - 1;
-            Player highestSusPlayer = RedAstronaut.getPlayers()[lastIndex];
-            Player secondHighestSusPlayer = RedAstronaut.getPlayers()[lastIndex-1];
+            Arrays.sort(super.getPlayers());
+            int lastIndex = super.getPlayers().length - 1;
+
+            int highestSusIndex = 0;
+
+            for (int index = lastIndex; index >= 0; index--) {
+                Player player = (Player) super.getPlayers()[index];
+                if (!player.isFrozen() && !super.equals(player)) {
+                    highestSusIndex = index;
+                    break;
+                }
+            }
+
+            Player highestSusPlayer = (Player) (super.getPlayers()[highestSusIndex]);
+
+            if (highestSusIndex != 0) {
+                Player secondHighestSusPlayer = super.getPlayers()[highestSusIndex-1];
 
             if (highestSusPlayer.compareTo(secondHighestSusPlayer) != 0) {
+                    highestSusPlayer.setFrozen(true);
+                }
+            }
+            else {
                 highestSusPlayer.setFrozen(true);
             }
         }
 
-        if (super.gameOver()) {
-
-        }
+        super.gameOver();
     }
 
     public void freeze(Player p) {
