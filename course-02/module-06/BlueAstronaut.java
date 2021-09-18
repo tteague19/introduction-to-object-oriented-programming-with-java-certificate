@@ -77,6 +77,108 @@
 //
 // Getters and Setters as necessary.
 
-public class BlueAstronaut {
+import java.util.Arrays;
 
+public class BlueAstronaut extends Player implements Crewmate {
+
+    private int numTasks;
+    private int taskSpeed;
+
+    public BlueAstronaut(String name, int susLevel, int numTasks, int taskSpeed) {
+        super(name, susLevel);
+        this.numTasks = numTasks;
+        this.taskSpeed = taskSpeed;
+    }
+
+    public BlueAstronaut(String name) {
+        this(name, 15, 6, 10);
+    }
+
+    public void emergencyMeeting() {
+        if (!this.isFrozen()) {
+            Arrays.sort(RedAstronaut.getPlayers());
+            int lastIndex = RedAstronaut.getPlayers().length - 1;
+
+            int highestSusIndex = 0;
+
+            for (int index = lastIndex; index >= 0; index--) {
+                Player player = (Player) super.getPlayers()[index];
+                if (!player.isFrozen()) {
+                    highestSusIndex = index;
+                    break;
+                }
+            }
+
+            Player highestSusPlayer = (Player) (super.getPlayers()[highestSusIndex]);
+
+            if (highestSusIndex != 0) {
+                Player secondHighestSusPlayer = super.getPlayers()[highestSusIndex-1];
+
+                if (highestSusPlayer.compareTo(secondHighestSusPlayer) != 0) {
+                    highestSusPlayer.setFrozen(true);
+                }
+            }
+            else {
+                highestSusPlayer.setFrozen(true);
+            }
+
+            super.gameOver();
+        }
+    }
+
+    public void completeTask() {
+
+        if (!this.isFrozen() && this.numTasks > 0) {
+            int reductionVal = (this.taskSpeed > 20 ? 2 : 1);
+            this.numTasks = this.numTasks - reductionVal;
+            this.numTasks = (this.numTasks < 0 ? 0 : this.numTasks);
+
+            if (this.numTasks == 0) {
+                System.out.println("I have completed all my tasks.");
+                this.setSusLevel((int)(0.5 * this.getSusLevel()));
+            }
+        }
+    }
+
+    public boolean equals(Object o) {
+
+        if (o instanceof BlueAstronaut) {
+            BlueAstronaut other = (BlueAstronaut) o;
+            boolean conditionOne = (this.numTasks == other.numTasks);
+            boolean conditionTwo = (this.taskSpeed == other.taskSpeed);
+
+            return super.equals(o) && conditionOne && conditionTwo;
+        }
+
+        return false;
+    }
+
+    public String toString() {
+        String playerStr = super.toString()
+                            + " I have "
+                            + this.numTasks
+                            + " leftover.";
+
+        if (this.getSusLevel() > 15) {
+            playerStr = playerStr.toUpperCase();
+        }
+
+        return playerStr;
+    }
+
+    public int getNumTasks() {
+        return this.numTasks;
+    }
+
+    public void setNumTasks(int numTasks) {
+        this.numTasks = numTasks;
+    }
+
+    public int getTaskSpeed() {
+        return this.taskSpeed;
+    }
+
+    public void setTaskSpeed(int taskSpeed) {
+        this.taskSpeed = taskSpeed;
+    }
 }
