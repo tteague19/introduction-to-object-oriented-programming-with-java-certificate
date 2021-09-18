@@ -97,7 +97,7 @@
 
 import java.util.Arrays;
 
-public class RedAstronaut extends Player implements Imposter {
+public class RedAstronaut extends Player implements Impostor {
 
     private String skill;
 
