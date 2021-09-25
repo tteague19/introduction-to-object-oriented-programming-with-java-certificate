@@ -25,14 +25,16 @@
 // getHello()
 //
 // int treat():
-// Should be an abstract method that returns the time taken (in minutes) to treat the pet
+// Should be an abstract method that returns the time taken
+// (in minutes) to treat the pet
 // void speak():
 // This method prints “Hello! My name is “ with the pet’s name
 // If painLevel is greater than 5 prints the message in UPPERCASE
 //
 // boolean equals(Object o):
 // Two Pet objects are equal if their names are the same
-// Note: You can assume you will not encounter two pets with the same name
+// Note: You can assume you will not encounter two pets with the same
+// name
 //
 // heal():
 // Should be protected to prevent access by external classes
