@@ -1,0 +1,9 @@
+Lines in gettysburg-address.txt containing we
+3: Now we are engaged in a great civil war, testing whether that nation,
+8: fitting and proper that we should do this.
+9: But, in a larger sense, we can not dedicate -- we can not consecrate
+10: -- we can not hallow -- this ground. The brave men, living and dead,
+11: who struggled here, have consecrated it, far above our poor power to
+12: add or detract. The world will little note, nor long remember what we
+17: from these honored dead we take increased devotion to that cause for
+18: which they gave the last full measure of devotion -- that we here
