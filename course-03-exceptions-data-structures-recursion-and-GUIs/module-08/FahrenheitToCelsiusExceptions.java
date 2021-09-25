@@ -20,6 +20,9 @@ public class FahrenheitToCelsiusExceptions {
                 System.out.println("Sorry, that wasn't an int");
                 System.out.println("Please try again.");
             }
+            catch(Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
 
         double celsius = (5D / 9) * (fahrenheit - 32);
