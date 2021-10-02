@@ -62,17 +62,20 @@ public class Dog extends Pet {
     }
 
     public int treat() {
-        super.heal();
 
+        int timeToTreat;
         if (this.droolRate < 3.5) {
-            return (int) Math.ceil((this.getPainLevel() * 2) / this.getHealth());
+            timeToTreat = (int) Math.ceil((this.getPainLevel() * 2) / this.getHealth());
         }
         else if (this.droolRate <= 7.5) {
-            return (int) Math.ceil(this.getPainLevel() / this.getHealth());
+            timeToTreat = (int) Math.ceil(this.getPainLevel() / this.getHealth());
         }
         else {
-            return (int) Math.ceil(this.getPainLevel() / (2 * this.getHealth()));
+            timeToTreat = (int) Math.ceil(this.getPainLevel() / (2 * this.getHealth()));
         }
+
+        super.heal();
+        return timeToTreat;
     }
 
     public void speak() {

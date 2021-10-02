@@ -62,17 +62,22 @@ public class Cat extends Pet {
     }
 
     public int treat() {
-        super.heal();
+
+        int timeToTreat;
 
         if (this.miceCaught < 4) {
-            return (int) Math.ceil((2 * this.getPainLevel()) / this.getHealth());
+            timeToTreat = (int) Math.ceil((2 * this.getPainLevel()) / this.getHealth());
         }
         else if (this.miceCaught <= 7) {
-            return (int) Math.ceil(this.getPainLevel() / this.getHealth());
+            timeToTreat = (int) Math.ceil(this.getPainLevel() / this.getHealth());
         }
         else {
-            return (int) Math.ceil(this.getPainLevel() / (2 * this.getHealth()));
+            timeToTreat = (int) Math.ceil(this.getPainLevel() / (2 * this.getHealth()));
         }
+
+        super.heal();
+
+        return timeToTreat;
     }
 
     public void speak() {
