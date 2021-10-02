@@ -133,7 +133,38 @@ public class LinkedList<T> implements List<T> {
     }
 
     public T removeAtIndex(int index) {
-        return this.head.getData();
+        if (index < 0 || index > (this.size - 1)) {
+            String errorMessage = "Your index is out of bounds";
+            throw new IllegalArgumentException(errorMessage);
+        } else {
+            Node<T> nodeToRemove;
+            Node<T> previousNode = null;
+            if (index == 0) {
+                previousNode = null;
+                nodeToRemove = this.head;
+                this.head = nodeToRemove.getNext();
+            } else {
+                // We move along the list until we reach the Node at
+                // the specified index.
+                int currentPosition = 0;
+                Node<T> currentNode = this.head;
+                while (currentPosition < index) {
+                    previousNode = currentNode;
+                    currentNode = previousNode.getNext();
+                    currentPosition++;
+                }
+                nodeToRemove = currentNode;
+                previousNode.setNext(nodeToRemove.getNext());
+                nodeToRemove.setNext(null);
+            }
+
+            if (index == (this.size - 1)) {
+                this.tail = previousNode;
+            }
+
+            this.size--;
+            return nodeToRemove.getData();
+        }
     }
 
     public T remove(T data) {
