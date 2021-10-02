@@ -211,5 +211,4 @@ public class LinkedList<T> implements List<T> {
     public int size() {
         return this.size;
     }
-
 }
