@@ -168,7 +168,35 @@ public class LinkedList<T> implements List<T> {
     }
 
     public T remove(T data) {
-        return data;
+        if (data == null) {
+            String errorMessage = "You cannot remove null data from the list";
+            throw new IllegalArgumentException(errorMessage);
+        }
+
+        // We move along the list until we reach a Node with the
+        // specified data or reach the end of the list.
+        int currentPosition = 0;
+        T returnData = null;
+        Node<T> currentNode = this.head;
+        while (currentNode != null) {
+            if (currentNode.getData().equals(data)) {
+                returnData = currentNode.getData();
+                System.out.println("Found it!");
+                break;
+            }
+
+            currentNode = currentNode.getNext();
+            currentPosition++;
+        }
+
+        // In this case, we have not found the specified data in the
+        // list.
+        if (returnData == null) {
+            String errorMessage = "The data is not present in the list.";
+            throw new NoSuchElementException(errorMessage);
+        }
+
+        return this.removeAtIndex(currentPosition);
     }
 
     public void clear() {
