@@ -106,7 +106,30 @@ public class LinkedList<T> implements List<T> {
     }
 
     public T getAtIndex(int index) {
-        return this.head.getData();
+        if (index < 0 || index > (this.size - 1)) {
+            String errorMessage = "Your index is out of the list bounds";
+            throw new IllegalArgumentException(errorMessage);
+        } else {
+            T returnData;
+            if (index == 0) {
+                returnData = this.head.getData();
+            } else if (index == (this.size - 1)) {
+                returnData = this.tail.getData();
+            } else {
+                // We move along the list until we reach the Node at
+                // the specified index.
+                int currentPosition = 0;
+                Node<T> currentNode = this.head;
+                while (currentPosition < index) {
+                    currentNode = currentNode.getNext();
+                    currentPosition++;
+                }
+
+                returnData = currentNode.getData();
+            }
+
+            return returnData;
+        }
     }
 
     public T removeAtIndex(int index) {
