@@ -172,7 +172,9 @@ public class LinkedList<T> implements List<T> {
     }
 
     public void clear() {
-
+        this.head = null;
+        this.tail = null;
+        this.size = 0;
     }
 
     public boolean isEmpty() {
