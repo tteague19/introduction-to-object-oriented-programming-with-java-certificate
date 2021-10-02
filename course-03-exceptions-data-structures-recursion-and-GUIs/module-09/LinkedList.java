@@ -178,7 +178,7 @@ public class LinkedList<T> implements List<T> {
     }
 
     public boolean isEmpty() {
-        return true;
+        return (this.size <= 0);
     }
 
     public int size() {
