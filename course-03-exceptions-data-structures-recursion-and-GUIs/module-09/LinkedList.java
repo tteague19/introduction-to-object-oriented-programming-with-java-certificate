@@ -181,7 +181,6 @@ public class LinkedList<T> implements List<T> {
         while (currentNode != null) {
             if (currentNode.getData().equals(data)) {
                 returnData = currentNode.getData();
-                System.out.println("Found it!");
                 break;
             }
 
