@@ -84,17 +84,24 @@ public class Cat extends Pet {
         super.speak();
 
         String message = "";
+        String meow = null;
+
+        if (this.getPainLevel() > 5) {
+            meow = "MEOW";
+        }
+        else {
+            meow = "meow";
+        }
         for (int i = 0; i < this.miceCaught; i++) {
-            String meow = (this.getPainLevel() > 5) ? "meow" : "MEOW";
             message = message + meow;
             // We place a space between each word unless it is the
             // last word in the message.
-            if (i != (this.getPainLevel() - 1)) {
+            if (i != (this.miceCaught - 1)) {
                 message = message + " ";
             }
         }
 
-        System.out.print(message);
+        System.out.print(message + "\n");
     }
 
     public boolean equals(Object o) {
