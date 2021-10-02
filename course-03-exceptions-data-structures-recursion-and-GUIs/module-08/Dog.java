@@ -82,8 +82,15 @@ public class Dog extends Pet {
         super.speak();
 
         String message = "";
+        String bark = null;
+        if (this.getPainLevel() > 5) {
+            bark = "BARK";
+        }
+        else {
+            bark = "bark";
+        }
+
         for (int i = 0; i < this.getPainLevel(); i++) {
-            String bark = (this.getPainLevel() > 5) ? "bark" : "BARK";
             message = message + bark;
             // We place a space between each word unless it is the
             // last word in the message.
@@ -92,7 +99,7 @@ public class Dog extends Pet {
             }
         }
 
-        System.out.print(message);
+        System.out.print(message + "\n");
     }
 
     public boolean equals(Object o) {
