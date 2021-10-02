@@ -87,7 +87,7 @@ public abstract class Pet {
     public void speak() {
         String message = "Hello! My name is " + this.name;
 
-        if (this.painLevel < 5) {
+        if (this.painLevel > 5) {
             message = message.toUpperCase();
         }
 
