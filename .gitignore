@@ -21,3 +21,6 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# We ignore the files in the JavaFX installation.
+course-03-exceptions-data-structures-recursion-and-GUIs/module-10/openjfx-17.0.0.1_windows-x64_bin-sdk/*
