@@ -13,7 +13,7 @@ public class HelloWorld extends Application {
 
         Button btn = new Button();
         btn.setText("Print Hello World!");
-        btn.setOnAction(new CustomEventHandler());
+        btn.setOnAction(event -> System.out.println("Hello World!"));
 
         StackPane root = new StackPane();
         root.getChildren().add(btn);
@@ -23,9 +23,9 @@ public class HelloWorld extends Application {
         mainStage.show();
     }
 
-    private class CustomEventHandler implements EventHandler<ActionEvent> {
-        public void handle(ActionEvent event) {
-            System.out.println("Hello World!");
-        }
-    }
+    // private class CustomEventHandler implements EventHandler<ActionEvent> {
+    //     public void handle(ActionEvent event) {
+    //         System.out.println("Hello World!");
+    //     }
+    // }
 }
